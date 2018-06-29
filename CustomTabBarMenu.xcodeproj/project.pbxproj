@@ -134,7 +134,7 @@
 		74B25E6020E5320A008BC862 /* CustomTabBarMenu */ = {
 			isa = PBXGroup;
 			children = (
-				74F9E2CA20E611A6006541FE /* model */,
+				74F9E2CB20E63A84006541FE /* model */,
 				74B25E9A20E533C2008BC862 /* controller */,
 				74B25E9320E533C2008BC862 /* view */,
 				74B25E6120E5320A008BC862 /* AppDelegate.h */,
@@ -204,7 +204,7 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		74F9E2CA20E611A6006541FE /* model */ = {
+		74F9E2CB20E63A84006541FE /* model */ = {
 			isa = PBXGroup;
 			children = (
 			);
