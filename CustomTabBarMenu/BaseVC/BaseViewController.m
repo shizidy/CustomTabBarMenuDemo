@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "SecondViewController.h"
 #define kscreenWidth [UIScreen mainScreen].bounds.size.width
 #define kscreenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -36,9 +35,9 @@
     // Do any additional setup after loading the view.
 }
 -(void)buttonClick:(UIButton *)btn{
-    SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [secondVC setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:secondVC animated:YES];
+//    SecondViewController *secondVC = [[SecondViewController alloc] init];
+//    [secondVC setHidesBottomBarWhenPushed:YES];
+//    [self.navigationController pushViewController:secondVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

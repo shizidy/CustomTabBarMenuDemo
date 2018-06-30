@@ -25,8 +25,6 @@
 		74B25EAF20E533C2008BC862 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25EA220E533C2008BC862 /* LeftViewController.m */; };
 		74B25EB020E533C2008BC862 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25EA520E533C2008BC862 /* CustomTabBarController.m */; };
 		74F9E2C620E5BE9B006541FE /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */; };
-		74F9E2C920E5C2EF006541FE /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2C820E5C2EF006541FE /* SecondViewController.m */; };
-		74F9E2CE20E63C26006541FE /* MenuListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2CD20E63C26006541FE /* MenuListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +81,6 @@
 		74B25EA620E533C2008BC862 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		74F9E2C420E5BE9B006541FE /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		74F9E2C720E5C2EF006541FE /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		74F9E2C820E5C2EF006541FE /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		74F9E2CC20E63C26006541FE /* MenuListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuListModel.h; sourceTree = "<group>"; };
-		74F9E2CD20E63C26006541FE /* MenuListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +131,10 @@
 		74B25E6020E5320A008BC862 /* CustomTabBarMenu */ = {
 			isa = PBXGroup;
 			children = (
-				74F9E2CB20E63A84006541FE /* model */,
-				74B25E9A20E533C2008BC862 /* controller */,
-				74B25E9320E533C2008BC862 /* view */,
+				74E858F820E72A5700CC5EC0 /* discovery */,
+				74E858EB20E7270D00CC5EC0 /* home */,
+				74E858EA20E71F5B00CC5EC0 /* BaseVC */,
+				74E858E920E71EF200CC5EC0 /* TabBarMenu */,
 				74B25E6120E5320A008BC862 /* AppDelegate.h */,
 				74B25E6220E5320A008BC862 /* AppDelegate.m */,
 				74B25E6420E5320A008BC862 /* ViewController.h */,
@@ -184,36 +179,47 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		74B25E9A20E533C2008BC862 /* controller */ = {
+		74E858E920E71EF200CC5EC0 /* TabBarMenu */ = {
 			isa = PBXGroup;
 			children = (
+				74B25E9320E533C2008BC862 /* view */,
 				74B25E9B20E533C2008BC862 /* LeftViewController.h */,
 				74B25EA220E533C2008BC862 /* LeftViewController.m */,
 				74B25EA120E533C2008BC862 /* RightViewController.h */,
 				74B25E9C20E533C2008BC862 /* RightViewController.m */,
 				74B25EA420E533C2008BC862 /* RootViewController.h */,
 				74B25E9D20E533C2008BC862 /* RootViewController.m */,
-				74B25EA320E533C2008BC862 /* HomeViewController.h */,
-				74B25E9E20E533C2008BC862 /* HomeViewController.m */,
-				74B25EA620E533C2008BC862 /* BaseViewController.h */,
-				74B25E9F20E533C2008BC862 /* BaseViewController.m */,
 				74B25EA020E533C2008BC862 /* CustomTabBarController.h */,
 				74B25EA520E533C2008BC862 /* CustomTabBarController.m */,
-				74F9E2C420E5BE9B006541FE /* BaseNavigationController.h */,
-				74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */,
-				74F9E2C720E5C2EF006541FE /* SecondViewController.h */,
-				74F9E2C820E5C2EF006541FE /* SecondViewController.m */,
 			);
-			path = controller;
+			path = TabBarMenu;
 			sourceTree = "<group>";
 		};
-		74F9E2CB20E63A84006541FE /* model */ = {
+		74E858EA20E71F5B00CC5EC0 /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				74F9E2CC20E63C26006541FE /* MenuListModel.h */,
-				74F9E2CD20E63C26006541FE /* MenuListModel.m */,
+				74B25EA620E533C2008BC862 /* BaseViewController.h */,
+				74B25E9F20E533C2008BC862 /* BaseViewController.m */,
+				74F9E2C420E5BE9B006541FE /* BaseNavigationController.h */,
+				74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */,
 			);
-			path = model;
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		74E858EB20E7270D00CC5EC0 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				74B25EA320E533C2008BC862 /* HomeViewController.h */,
+				74B25E9E20E533C2008BC862 /* HomeViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		74E858F820E72A5700CC5EC0 /* discovery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = discovery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,10 +362,8 @@
 				74B25E6620E5320A008BC862 /* ViewController.m in Sources */,
 				74B25EAD20E533C2008BC862 /* HomeViewController.m in Sources */,
 				74B25E7120E5320B008BC862 /* main.m in Sources */,
-				74F9E2C920E5C2EF006541FE /* SecondViewController.m in Sources */,
 				74B25EAF20E533C2008BC862 /* LeftViewController.m in Sources */,
 				74B25EA920E533C2008BC862 /* CustomTabBar.m in Sources */,
-				74F9E2CE20E63C26006541FE /* MenuListModel.m in Sources */,
 				74B25E6320E5320A008BC862 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

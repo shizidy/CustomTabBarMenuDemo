@@ -13,7 +13,7 @@
 #import "HomeViewController.h"
 
 @interface CustomTabBarController ()<SamTabBarDelegate>
-
+@property (nonatomic, strong)HomeViewController *homeVC;
 @end
 
 @implementation CustomTabBarController
@@ -71,7 +71,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 -(void)setupVC{
-    [self addChildVc:[[HomeViewController alloc] init] title:@"首页" image:@"" selectedImage:@""];
+    [self addChildVc:self.homeVC title:@"首页" image:@"" selectedImage:@""];
     [self addChildVc:[[BaseViewController alloc] init] title:@"发现" image:@"" selectedImage:@""];
     [self addChildVc:[[BaseViewController alloc] init] title:@"消息" image:@"" selectedImage:@""];
     [self addChildVc:[[BaseViewController alloc] init] title:@"个人中心" image:@"" selectedImage:@""];
@@ -93,6 +93,14 @@
     // 添加子控制器
     [self addChildViewController:navigationVc];
 }
+#pragma mark ========== 懒加载 ==========
+-(HomeViewController *)homeVC{
+    if (_homeVC==nil) {
+        _homeVC = [[HomeViewController alloc] init];
+    }
+    return _homeVC;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
