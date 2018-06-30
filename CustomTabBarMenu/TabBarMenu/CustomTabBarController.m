@@ -11,9 +11,11 @@
 #import "BaseViewController.h"
 #import "BaseNavigationController.h"
 #import "HomeViewController.h"
+#import "DiscoveryViewController.h"
 
 @interface CustomTabBarController ()<SamTabBarDelegate>
-@property (nonatomic, strong)HomeViewController *homeVC;
+@property (nonatomic, strong) HomeViewController *homeVC;
+@property (nonatomic, strong) DiscoveryViewController *discoveryVC;
 @end
 
 @implementation CustomTabBarController
@@ -72,7 +74,7 @@
 }
 -(void)setupVC{
     [self addChildVc:self.homeVC title:@"首页" image:@"" selectedImage:@""];
-    [self addChildVc:[[BaseViewController alloc] init] title:@"发现" image:@"" selectedImage:@""];
+    [self addChildVc:self.discoveryVC title:@"发现" image:@"" selectedImage:@""];
     [self addChildVc:[[BaseViewController alloc] init] title:@"消息" image:@"" selectedImage:@""];
     [self addChildVc:[[BaseViewController alloc] init] title:@"个人中心" image:@"" selectedImage:@""];
 }
@@ -100,7 +102,12 @@
     }
     return _homeVC;
 }
-
+-(DiscoveryViewController *)discoveryVC{
+    if (_discoveryVC==nil) {
+        _discoveryVC = [[DiscoveryViewController alloc] init];
+    }
+    return _discoveryVC;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

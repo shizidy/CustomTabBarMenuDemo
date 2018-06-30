@@ -24,6 +24,7 @@
 		74B25EAE20E533C2008BC862 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25E9F20E533C2008BC862 /* BaseViewController.m */; };
 		74B25EAF20E533C2008BC862 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25EA220E533C2008BC862 /* LeftViewController.m */; };
 		74B25EB020E533C2008BC862 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25EA520E533C2008BC862 /* CustomTabBarController.m */; };
+		74E8590120E72D7C00CC5EC0 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8590020E72D7C00CC5EC0 /* DiscoveryViewController.m */; };
 		74F9E2C620E5BE9B006541FE /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		74B25EA420E533C2008BC862 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		74B25EA520E533C2008BC862 /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		74B25EA620E533C2008BC862 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		74E858FF20E72D7C00CC5EC0 /* DiscoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		74E8590020E72D7C00CC5EC0 /* DiscoveryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
 		74F9E2C420E5BE9B006541FE /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +221,8 @@
 		74E858F820E72A5700CC5EC0 /* discovery */ = {
 			isa = PBXGroup;
 			children = (
+				74E858FF20E72D7C00CC5EC0 /* DiscoveryViewController.h */,
+				74E8590020E72D7C00CC5EC0 /* DiscoveryViewController.m */,
 			);
 			path = discovery;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				74F9E2C620E5BE9B006541FE /* BaseNavigationController.m in Sources */,
 				74B25E6620E5320A008BC862 /* ViewController.m in Sources */,
 				74B25EAD20E533C2008BC862 /* HomeViewController.m in Sources */,
+				74E8590120E72D7C00CC5EC0 /* DiscoveryViewController.m in Sources */,
 				74B25E7120E5320B008BC862 /* main.m in Sources */,
 				74B25EAF20E533C2008BC862 /* LeftViewController.m in Sources */,
 				74B25EA920E533C2008BC862 /* CustomTabBar.m in Sources */,

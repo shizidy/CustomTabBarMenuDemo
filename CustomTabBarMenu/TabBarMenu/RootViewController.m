@@ -47,13 +47,15 @@
     //添加拖动手势
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self.view addGestureRecognizer:panGR];
+    //注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu:) name:@"showMenu" object:nil];
     // Do any additional setup after loading the view.
 }
 #pragma mark ========== 拖动手势事件 ==========
 -(void)pan:(UIPanGestureRecognizer *)gesture{
     CGPoint point = [gesture translationInView:self.view];
     CGFloat offset_X = point.x;
-    CGFloat margin = 88;
+    CGFloat margin = 80;
     CGFloat originX = self.tabBarVC.view.frame.origin.x;
     CGFloat rightX = kscreenWidth-margin;//self.view滑到最右边时的origin.x(如果允许leftMenu样式)
     CGFloat leftX = -kscreenWidth+margin;//self.view滑到最左边时的origin.x(如果允许rightMenu样式)
@@ -288,6 +290,28 @@
             }
         }
     }
+}
+#pragma mark ========== 通知 ==========
+-(void)showMenu:(NSNotification *)noti{
+    NSLog(@"通知%@", noti.object);
+    CGFloat margin = 80;
+    CGFloat rightX = kscreenWidth-margin;//self.view滑到最右边时的origin.x(如果允许leftMenu样式)
+//    CGFloat leftX = -kscreenWidth+margin;//self.view滑到最左边时的origin.x(如果允许rightMenu样式)
+    CGFloat middleX = 0;//self.view在初始位置时的origin.x
+    [self.view insertSubview:self.leftVC.view aboveSubview:self.rightVC.view];
+    if ([noti.object isEqualToString:@"1"]) {//menu打开
+        [UIView animateWithDuration:0.2 animations:^{
+            self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(rightX, 0);
+        }];
+    }else{//关闭
+        [UIView animateWithDuration:0.2 animations:^{
+            self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(middleX, 0);
+        }];
+    }
+    
+}
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 #pragma mark ========== 懒加载 ==========
 -(LeftViewController *)leftVC{
