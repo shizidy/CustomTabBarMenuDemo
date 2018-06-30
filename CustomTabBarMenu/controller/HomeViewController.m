@@ -51,6 +51,7 @@
 }
 -(void)buttonClick:(UIButton *)btn{
     SecondViewController *secondVC = [[SecondViewController alloc] init];
+    [secondVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:secondVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

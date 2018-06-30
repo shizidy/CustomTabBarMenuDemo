@@ -26,6 +26,7 @@
 		74B25EB020E533C2008BC862 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B25EA520E533C2008BC862 /* CustomTabBarController.m */; };
 		74F9E2C620E5BE9B006541FE /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */; };
 		74F9E2C920E5C2EF006541FE /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2C820E5C2EF006541FE /* SecondViewController.m */; };
+		74F9E2CE20E63C26006541FE /* MenuListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F9E2CD20E63C26006541FE /* MenuListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		74F9E2C520E5BE9B006541FE /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		74F9E2C720E5C2EF006541FE /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		74F9E2C820E5C2EF006541FE /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		74F9E2CC20E63C26006541FE /* MenuListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuListModel.h; sourceTree = "<group>"; };
+		74F9E2CD20E63C26006541FE /* MenuListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 		74F9E2CB20E63A84006541FE /* model */ = {
 			isa = PBXGroup;
 			children = (
+				74F9E2CC20E63C26006541FE /* MenuListModel.h */,
+				74F9E2CD20E63C26006541FE /* MenuListModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				74F9E2C920E5C2EF006541FE /* SecondViewController.m in Sources */,
 				74B25EAF20E533C2008BC862 /* LeftViewController.m in Sources */,
 				74B25EA920E533C2008BC862 /* CustomTabBar.m in Sources */,
+				74F9E2CE20E63C26006541FE /* MenuListModel.m in Sources */,
 				74B25E6320E5320A008BC862 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
