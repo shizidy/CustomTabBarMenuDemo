@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     CustomTabBarController *tabBarVC = [[CustomTabBarController alloc] init];
-    RootViewController *rootVC = [[RootViewController alloc] initWithMenuStyle:LeftandRightMenuStyle];
+    RootViewController *rootVC = [[RootViewController alloc] initWithMenuStyle:LeftMenuStyle];
     self.window.rootViewController = rootVC;
     // Override point for customization after application launch.
     return YES;

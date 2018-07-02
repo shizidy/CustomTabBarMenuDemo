@@ -14,7 +14,7 @@
 #define kscreenWidth [UIScreen mainScreen].bounds.size.width
 #define kscreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface RootViewController (){
+@interface RootViewController ()<UIAlertViewDelegate>{
     BOOL isLeftMenuShow;
     BOOL isRightMenuShow;
 }
@@ -293,23 +293,54 @@
 }
 #pragma mark ========== 通知 ==========
 -(void)showMenu:(NSNotification *)noti{
-    NSLog(@"通知%@", noti.object);
+    UIButton *button = (UIButton *)noti.object;
+//    NSLog(@"=========%ld", button.tag);
     CGFloat margin = 80;
     CGFloat rightX = kscreenWidth-margin;//self.view滑到最右边时的origin.x(如果允许leftMenu样式)
-//    CGFloat leftX = -kscreenWidth+margin;//self.view滑到最左边时的origin.x(如果允许rightMenu样式)
+    CGFloat leftX = -kscreenWidth+margin;//self.view滑到最左边时的origin.x(如果允许rightMenu样式)
     CGFloat middleX = 0;//self.view在初始位置时的origin.x
-    [self.view insertSubview:self.leftVC.view aboveSubview:self.rightVC.view];
-    if ([noti.object isEqualToString:@"1"]) {//menu打开
-        [UIView animateWithDuration:0.2 animations:^{
-            self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(rightX, 0);
-        }];
-    }else{//关闭
-        [UIView animateWithDuration:0.2 animations:^{
-            self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(middleX, 0);
-        }];
+    if (button.tag==1) {
+        if (self.menuStyle==RightMenuStyle) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"未开启左菜单" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+            alertView.alertViewStyle = UIAlertViewStyleDefault;
+            [alertView show];
+            
+        }else{
+            [self.view insertSubview:self.leftVC.view aboveSubview:self.rightVC.view];
+            if (button.selected) {//menu打开
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(rightX, 0);
+                }];
+            }else{//关闭
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(middleX, 0);
+                }];
+            }
+        }
+        
+    }else{
+        if (self.menuStyle==LeftMenuStyle) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"未开启右菜单" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+            alertView.alertViewStyle = UIAlertViewStyleDefault;
+            [alertView show];
+        }else{
+            [self.view insertSubview:self.rightVC.view aboveSubview:self.leftVC.view];
+            if (button.selected) {//menu打开
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(leftX, 0);
+                }];
+            }else{//关闭
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.tabBarVC.view.transform = CGAffineTransformMakeTranslation(middleX, 0);
+                }];
+            }
+        }
+        
     }
     
+    
 }
+#pragma mark ========== AlertViewDelegate ==========
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

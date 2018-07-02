@@ -18,7 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = [self settingLeftButtonItemWithTitle:@"左菜单" image:@""];
+    self.navigationItem.leftBarButtonItem = [self settingButtonItemWithTitle:@"左菜单" image:@"" tag:1];
+    self.navigationItem.rightBarButtonItem = [self settingButtonItemWithTitle:@"右菜单" image:@"" tag:2];
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     button.center = CGPointMake(kscreenWidth/2, kscreenHeight/2);
     [button setTitle:@"push" forState:UIControlStateNormal];
@@ -38,22 +40,24 @@
     
     // Do any additional setup after loading the view.
 }
--(UIBarButtonItem *)settingLeftButtonItemWithTitle:(NSString *)title image:(NSString *)imageName{
+-(UIBarButtonItem *)settingButtonItemWithTitle:(NSString *)title image:(NSString *)imageName tag:(NSInteger)tag{
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [button setTitle:title forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(leftBarButtonItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(buttonItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    button.tag = tag;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     return item;
 }
--(void)leftBarButtonItemClick:(UIButton *)btn{
+#pragma mark ========== buttonItem左右菜单点击事件 ==========
+-(void)buttonItemClick:(UIButton *)btn{
     if (btn.selected==YES) {
         btn.selected = NO;
     }else{
         btn.selected = YES;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"showMenu" object:[NSString stringWithFormat:@"%d", btn.selected]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showMenu" object:btn];
 }
 -(void)buttonClick:(UIButton *)btn{
     UIViewController *uiVC = [[UIViewController alloc] init];
